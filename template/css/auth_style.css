@@ -1,5 +1,8 @@
-body{
+﻿body{
     background-color: #8FB4C7;
+}
+.material{
+    box-shadow: 0 0 3px #505050;
 }
 #auth_block{
     width:400px;
@@ -8,4 +11,61 @@ body{
     margin-right: auto;
     margin-top: 100px;
     background-color: #F3EEE9;
+    text-align: center;
+    padding: 10px 10px;
+}
+#auth_block h1{
+    margin-top: 30px;
+}
+
+#auth_block form{
+    margin-top: 40px
+}
+
+#auth_block div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+#auth_block input{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+#auth_button input{
+    width: 100px;
+    float: right;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#auth_button input:hover{
+    background: #D9E8FD;
+}
+
+#auth_button input:active{
+    background: #8FB4C7;
+    border: none;
+    outline: none;
+}
+#auth_button span{
+    float: left;
+    margin-top: 10px;
+}
+
+#auth_button a{
+    cursor: pointer;
+    color: #000;
+    text-decoration: underline;
+}
+
+#auth_button a:visited{
+    color: #304261;
+}
+
+#auth_button a:active{
+    color: #8FB4C7;
 }

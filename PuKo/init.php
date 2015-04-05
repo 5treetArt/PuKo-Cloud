@@ -5,5 +5,4 @@
  */
 
 include_once("config.php");
-
 set_core();

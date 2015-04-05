@@ -16,7 +16,8 @@ function set_core(){
     
     //Служебные фенкции и модули
     $BIN_ARR =array(
-    "wrapper"
+        "wrapper",
+        "tools"
     );
     
     foreach ($BIN_ARR as $BIN){

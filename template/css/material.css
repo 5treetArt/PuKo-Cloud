@@ -1,9 +1,3 @@
-.material{
-    box-shadow: 0 0 3px #505050!important;
-    border: none;
-    outline: none;
-}
-
 a{
     cursor: pointer;
     color: #000;
@@ -12,4 +6,10 @@ a{
 
 a:active{
     color: #8FB4C7;
+}
+
+.material{
+    box-shadow: 0 0 3px #505050!important;
+    border: none;
+    outline: none;
 }

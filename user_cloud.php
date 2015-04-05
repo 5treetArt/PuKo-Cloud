@@ -8,10 +8,13 @@
     session_control("start");
     set_module("auth", "host");
     
+    //если не авторизован, пусть идет прочь!
     if($_SESSION["is_authorized"] !== TRUE){
         session_control("destroy");
         to_page("index.php");
     }
+    
+    $_SESSION["current_dir"] = "user";
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,5 +25,6 @@
     </head>
     <body>
         <?php include("template/header.php") ?>
+        <?php include("template/explorer.php") ?>
     </body>
 </html>

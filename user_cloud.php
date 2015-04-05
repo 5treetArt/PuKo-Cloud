@@ -1,17 +1,26 @@
+<?php
+
+/**
+ *Выводит на экран список каталогов и файлов, добавленных пользователем. 
+ */
+
+    include_once("PuKo/init.php");
+    session_control("start");
+    set_module("auth", "host");
+    
+    if($_SESSION["is_authorized"] !== TRUE){
+        session_control("destroy");
+        to_page("index.php");
+    }
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title><?=$GLOBALS["CONFIGS"]["SITE_NAME"]?></title>
+        <link rel="stylesheet" type="text/css" href="template/css/material.css" />
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <?php include("template/header.php") ?>
     </body>
 </html>

@@ -1,9 +1,7 @@
 ﻿body{
     background-color: #8FB4C7;
 }
-.material{
-    box-shadow: 0 0 3px #505050;
-}
+
 #auth_block{
     width:400px;
     height:300px;
@@ -51,6 +49,8 @@
     border: none;
     outline: none;
 }
+
+
 #auth_button span{
     float: left;
     margin-top: 10px;
@@ -60,12 +60,4 @@
     cursor: pointer;
     color: #000;
     text-decoration: underline;
-}
-
-#auth_button a:visited{
-    color: #304261;
-}
-
-#auth_button a:active{
-    color: #8FB4C7;
 }

@@ -1,18 +1,22 @@
-﻿<?php
+<?php
 
 /**
  * Главная страница сайта предлагает пользователям зарегистрироваться или войти.
  * За авторизацию отвечает модуль auth.
  */
 
-    include_once 'PuKo/init.php';
+    include_once("PuKo/init.php");
+    session_control("start");
+    set_module("auth");
     
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        switch (authorize($_POST["name"], $_POST["password"])){
+        switch (authorize($_POST["username"], $_POST["password"])){
         case BAD_USERNAME:
             $response = "Неправильное имя пользователя";
             break;
         case AUTHORIZED:
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["is_authorized"] = TRUE;
             to_page("user_cloud.php");
             break;
         }
@@ -23,8 +27,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>PuKo Cloud</title>
+        <title><?=$GLOBALS["CONFIGS"]["SITE_NAME"]?></title>
         <link rel="stylesheet" type="text/css" href="template/css/auth_style.css" />
+        <link rel="stylesheet" type="text/css" href="template/css/material.css" />
     </head>
     <body>
         <div>

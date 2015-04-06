@@ -1,6 +1,6 @@
 <?php
 
-function ConvertBytes($number)
+function convert_bytes($number)
 {
     $len = strlen($number);
     if($len < 4)

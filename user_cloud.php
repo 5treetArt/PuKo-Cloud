@@ -22,6 +22,7 @@
         <meta charset="UTF-8">
         <title><?=$GLOBALS["CONFIGS"]["SITE_NAME"]?></title>
         <link rel="stylesheet" type="text/css" href="template/css/material.css" />
+        <link rel="stylesheet" type="text/css" href="template/css/explorer_style.css" />
     </head>
     <body>
         <?php include("template/header.php") ?>

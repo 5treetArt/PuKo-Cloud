@@ -15,17 +15,15 @@ function dir_detail($__dir){
     foreach ($files_arr as $file){
         if($file == "." || $file == ".."){
             continue;
-        }
-        //is_file не работает
+        }      
+      
+        list($name, $dir_detail_arr[$file]["ext"]) = explode(".", $file);
         
-        if(is_file($file)){
-            $dir_detail_arr[$file]["ext"] = "Директория";
-        }
-        else{
-            list($dir_detail_arr[$file]["name"], $dir_detail_arr[$file]["ext"]) = explode(".", $file);
+        if(strpos($file, ".") === FALSE){
+            $dir_detail_arr[$file]["ext"] = "Папка";
         }
         
-        $dir_detail_arr[$file]["name"] = $file;
+        $dir_detail_arr[$file]["name"] = iconv( "windows-1251", "utf-8", $name);
     }
     //print_r($dir_detail_arr);
     return $dir_detail_arr;

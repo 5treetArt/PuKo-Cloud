@@ -9,6 +9,12 @@
     session_control("start");
     set_module("auth");
     
+    if($_COOKIE["is_authorized"] === TRUE){
+        $_SESSION["username"] = $_COOKIE["username"];
+        $_SESSION["is_authorized"] = TRUE;
+        to_page("user_cloud.php");
+    }
+    
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         switch (authorize($_POST["username"], $_POST["password"])){
         case BAD_USERNAME:
@@ -17,6 +23,8 @@
         case AUTHORIZED:
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["is_authorized"] = TRUE;
+            set_cookies("username", $_SESSION["username"], time() + 3200);
+            set_cookies("is_authorized", $_SESSION["is_authorized"], time() + 3200);
             to_page("user_cloud.php");
             break;
         }

@@ -13,7 +13,7 @@ try{
     
     core\start_b();
     
-    engine\base\run();
+    $response = engine\base\run();
     
     $buffer = core\end_b();
     

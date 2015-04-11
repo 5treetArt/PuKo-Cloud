@@ -5,9 +5,11 @@ if(!defined('PUKO')){
 }
 
 namespace io{
+    
     function init(){
         require('request.php');
         require('response.php');
+        require('cookie.php');
         
         require('class' . DIRECTORY_SEPARATOR . 'Query.php');
     }

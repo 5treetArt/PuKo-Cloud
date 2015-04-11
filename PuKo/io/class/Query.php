@@ -5,7 +5,23 @@ if(!defined('PUKO')){
 }
 
 class Query{
-    private $_query;
-    private $_query_arr;
+    private $_query = '';
+    private static $_query_arr = array();
+    
+    public function set($__query){
+        if($this->_query !== '' && $this->_query !== '/') {
+
+            $this->_query_arr = explode('/', $this->_query);
+    
+        } 
+        
+        if(empty($this->_query_arr)){
+            $this->_query_arr[] = '/';
+        }
+    }
+    
+    public function get_arr() {
+        return $this->_query_arr;
+    }
 }
 

@@ -3,6 +3,7 @@
 if (! defined('PUKO')){
     die('No direct access');
 }
+
 function init(){
     
     if(version_compare(PHP_VERSION, '5.3.0') < 0){
@@ -32,7 +33,7 @@ function init(){
 
     setlocale(LC_ALL, 'rus');
     
-    include_once('config.php');
+    include('config.php');
     
     set_required();
 }

@@ -6,10 +6,13 @@ if (!defined('PUKO')){
 
 $SETTINGS = array(
     'site_name' => "PuKo Cloud",
+    'auth' => true,
+    'cookie' => true,
 );
 
 $MODULES = array(
     'engine',
+    'io',
 );
 
 define('MODULES', $MODULES);

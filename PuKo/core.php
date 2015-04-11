@@ -8,7 +8,7 @@ namespace core{
 
     function start_b(){
         ob_start();//включает буферизацию вывода.
-        ob_implicit_flush(false);//включает/выключает неявную очистку.
+        ob_implicit_flush(false);//выключает неявную очистку.
     }
     
     function end_b(){

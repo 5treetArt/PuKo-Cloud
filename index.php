@@ -15,7 +15,7 @@ try{
     
     $response = engine\base\run();
     
-    $buffer = core\end_b();
+    core\end_b();
     
     io\response\send($buffer);
     

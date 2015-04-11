@@ -24,7 +24,8 @@ function run(){
     $controller = get_controller($route);
     
     $action = $controller . 'execute';
-    return $action();
+    
+    return $action($query->get_arr());
 }
 
 function get_route($__query = '/'){
@@ -48,5 +49,5 @@ function get_controller($__route){
         }
     }
     require($__route . '.php');
-    return 'controller\\' . array_pop(explode('/', $__route)) . '\\';//controller\module_name\exexute
+    return 'controller\\' . array_pop(explode('/', $__route)) . '\\';//controller\module_name\
 }

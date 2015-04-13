@@ -9,6 +9,10 @@ if(!defined('PUKO')){
 function start_b(){
     ob_start();//включает буферизацию вывода.
     ob_implicit_flush(false);//выключает неявную очистку.
+    
+    $SETTINGS = $GLOBALS['SETTINGS'];
+    
+    \DB_Driver::connect($SETTINGS['db_server'], $SETTINGS['db_username'], $SETTINGS['db_password']);
 }
 
 function end_b(){
@@ -16,6 +20,19 @@ function end_b(){
     ob_end_clean();//очищает буфер вывода и отключает буферизацию вывода.
     return $buffer;
 }
+
+//function _autoload_by_map($__class_name){
+//
+//    $class_map = array(
+//        'model\User' => 'engine' . DIRSEP . 'mvc' . DIRSEP . 'model' . DIRSEP . 'User.php',
+//        );
+//    
+//    if(isset($class_map[$__class_name])) {
+//        include ROOT . DIRSEP . $class_map[$__class_name];
+//        return true;
+//    } 
+//    return false;
+//}
 
  
     

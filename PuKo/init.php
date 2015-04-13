@@ -39,8 +39,7 @@ function init(){
 function set_required(){
     
     require('config.php');
-        
-    require_once('core.php');
+    require('core.php');
     
     $MODULES = $GLOBALS['MODULES'];
 

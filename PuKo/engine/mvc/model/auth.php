@@ -9,6 +9,10 @@ function get_data($__query_arr){
 
     set_required();
 
+    $user = new \model\user\User();
+    
+    $user->login('mail.ru', 'dfsdf');
+    
     $data_arr = array();
 
     if(empty($__query_arr)){

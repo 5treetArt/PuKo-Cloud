@@ -4,20 +4,25 @@ define('PUKO', true);
 
 define('SYS_DEBUG', true);
 
-define('ROOT', realpath(dirname(__FILE__) ) . DIRECTORY_SEPARATOR);
+define('DIRSEP', DIRECTORY_SEPARATOR);
 
-require_once(ROOT . 'PuKo' . DIRECTORY_SEPARATOR . 'init.php');
+define('ROOT', realpath(dirname(__FILE__)) . DIRSEP. 'PuKo');
+define('MVC', ROOT . DIRSEP . 'engine' . DIRSEP . 'mvc');
+
+require_once(ROOT . DIRSEP . 'init.php');
 
 try{
     init();//set all the modules
     
-    core\start_b();
+    \core\start_b();
     
-    $response = engine\base\run();
+    $response = \engine\base\run();
     
-    core\end_b();
+    $buffer = \core\end_b();
     
-    io\response\send($buffer);
+    \io\response\send();
+    
+    echo $buffer;
     
 } catch (Exception $ex) {
     echo $ex;

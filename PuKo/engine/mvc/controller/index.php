@@ -4,10 +4,8 @@ if(!defined('PUKO')){
     die('No direct access');
 }
 
+namespace controller\index;
 
-namespace controller\index{
-    
-    function execute(){
-        
-    }
+function execute(){
+
 }

@@ -1,8 +1,11 @@
 <?php
+namespace view\auth;
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+if(!defined('PUKO')){
+    die('No direct access');
+}
 
+function get_response($__response){
+   include(ROOT . DIRSEP . 'template' . DIRSEP . 'auth' . DIRSEP . 'auth.php');
+   return true;
+}

@@ -1,10 +1,9 @@
 <?php
-
-if(!defined('PUKO')){
-    die('No direct access');
-}
-
 namespace io\cookie{
+    
+    if(!defined('PUKO')){
+        die('No direct access');
+    }
     
     function get($__param){
         if(isset($_COOKIE[$__param])){

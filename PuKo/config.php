@@ -4,6 +4,9 @@ if (!defined('PUKO')){
     die('No direct access');
 }
 
+global $SETTINGS;
+global $MODULES;
+
 $SETTINGS = array(
     'site_name' => "PuKo Cloud",
     'auth' => true,
@@ -14,5 +17,3 @@ $MODULES = array(
     'engine',
     'io',
 );
-
-define('MODULES', $MODULES);

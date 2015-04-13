@@ -31,21 +31,21 @@ function init(){
     ini_set('session.cookie_httponly', '1');// Use httponly session cookies.
     ini_set('date.timezone', 'Europe/Moscow');
 
-    setlocale(LC_ALL, 'rus');
-    
-    include('config.php');
+    setlocale(LC_ALL, 'C');
     
     set_required();
 }
 
 function set_required(){
     
-    if(!defuned('MODULES')){
-        die('Cannot find modules');
-    }
+    require('config.php');
+        
+    require_once('core.php');
     
-    foreach (MODULES as $module){
-        require('$module' . DIRECTORY_SEPARATOR . 'init.php');
+    $MODULES = $GLOBALS['MODULES'];
+
+    foreach ($MODULES as $module){
+        require($module . DIRECTORY_SEPARATOR . 'init.php');
         $init_module = $module. '\\init';
         $init_module();
     }

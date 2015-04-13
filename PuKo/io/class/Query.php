@@ -1,5 +1,7 @@
 <?php
 
+namespace io;
+
 if(!defined('PUKO')){
     die('No direct access');
 }
@@ -20,8 +22,7 @@ class Query{
         }
     }
     
-    public function get_arr() {
-        return $this->_query_arr;
+    public static function get_arr() {
+        return self::$_query_arr;
     }
 }
-

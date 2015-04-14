@@ -16,6 +16,7 @@ function start_b(){
 }
 
 function end_b(){
+    \DB_Driver::close();
     $buffer = ob_get_contents();//возвращает содержимое буфера вывода.
     ob_end_clean();//очищает буфер вывода и отключает буферизацию вывода.
     return $buffer;

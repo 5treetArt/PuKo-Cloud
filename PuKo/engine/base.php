@@ -13,7 +13,6 @@ define('VERSION', '0.1');
 //\io\init();
 
 function run(){
-    //$query = new \io\Query();
 
     $query = '';
     
@@ -31,7 +30,7 @@ function run(){
 
     $action = $controller . 'execute';
 
-    return $action($query_arr);
+    $action($query_arr);
 }
 
 function get_route($__path = '/'){
@@ -59,8 +58,8 @@ function get_controller($__route){
     
     if($SETTINGS['auth'] === true){
         if(\io\cookie\get('authorized') == false){
-            require(MVC . DIRSEP . 'controller' . DIRSEP . 'auth.php');
-            return 'controller\\auth\\';
+            require(ENGINE . DIRSEP . 'identification' . DIRSEP . 'auth.php');
+            return '\\auth\\';
         }
     }
 

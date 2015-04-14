@@ -6,6 +6,12 @@ if (! defined('PUKO')){
 
 function init(){
     
+    define('IO', ROOT . DIRSEP . 'io');
+    define('COMMON', ROOT . DIRSEP . 'common');
+    define('ENGINE', ROOT . DIRSEP . 'engine');
+    define('MVC', ENGINE . DIRSEP . 'mvc');
+    
+    
     if(version_compare(PHP_VERSION, '5.3.0') < 0){
         die('Require PHP version 5.3.0 or later');
     }
@@ -44,7 +50,7 @@ function set_required(){
     $MODULES = $GLOBALS['MODULES'];
 
     foreach ($MODULES as $module){
-        require($module . DIRECTORY_SEPARATOR . 'init.php');
+        require($module . DIRSEP . 'init.php');
         $init_module = $module. '\\init';
         $init_module();
     }
